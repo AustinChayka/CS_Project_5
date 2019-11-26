@@ -2,6 +2,7 @@
 #define LINKED_LIST_HPP
 
 #include "Node.hpp"
+#include <iostream>
 
 template <class T>
 class Linked_List {
@@ -30,19 +31,37 @@ public:
 #endif
 
 template<class T>
-inline void Linked_List<T>::print() {}
+inline void Linked_List<T>::print() {
+
+	Node* n = head;
+	while(n != nullptr) {
+		std::cout << n << " ";
+		n = n.next;
+	}
+	std::cout << std::endl;
+
+}
 
 template<class T>
 inline void Linked_List<T>::clear() {}
 
 template<class T>
 inline unsigned int Linked_List<T>::get_length() {
-	return 0;
+
+	return length;
+
 }
 
 template<class T>
-inline unsigned int Linked_List<T>::push_front(T) {
-	return 0;
+inline unsigned int Linked_List<T>::push_front(T val) {
+
+	Node<T>* n = new Node<T>;
+	n->val = val;
+	n->next = head;
+	head = n;
+
+	return ++length;
+
 }
 
 template<class T>
