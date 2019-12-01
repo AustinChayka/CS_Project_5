@@ -1,33 +1,30 @@
 ﻿  driver.cpp
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(146,2): warning C4002: too many arguments for function-like macro invocation 'assert'
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(28,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(80,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(75): message : while compiling class template member function 'void Linked_List<int>::clear(void)'
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(31): message : see reference to function template instantiation 'void Linked_List<int>::clear(void)' being compiled
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(9): message : see reference to class template instantiation 'Linked_List<int>' being compiled
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(103,2): warning C4018: '<': signed/unsigned mismatch
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(101): message : while compiling class template member function 'T Linked_List<T>::get(int)'
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(101): message :         with
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(101): message :         [
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(101): message :             T=int
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(101): message :         ]
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(28): message : see reference to function template instantiation 'T Linked_List<T>::get(int)' being compiled
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(28): message :         with
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(28): message :         [
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(28): message :             T=int
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(28): message :         ]
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(136,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(125): message : while compiling class template member function 'unsigned int Linked_List<int>::push_back(T)'
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(125): message :         with
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(125): message :         [
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(125): message :             T=int
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(125): message :         ]
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(11): message : see reference to function template instantiation 'unsigned int Linked_List<int>::push_back(T)' being compiled
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(11): message :         with
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(11): message :         [
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(11): message :             T=int
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(11): message :         ]
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(169,2): warning C4018: '<': signed/unsigned mismatch
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(167): message : while compiling class template member function 'unsigned int Linked_List<int>::remove(int)'
-C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(22): message : see reference to function template instantiation 'unsigned int Linked_List<int>::remove(int)' being compiled
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(12,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(25,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(143,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(138): message : while compiling class template member function 'void Linked_List<int>::clear(void)'
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(28): message : see reference to function template instantiation 'void Linked_List<int>::clear(void)' being compiled
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(10): message : see reference to class template instantiation 'Linked_List<int>' being compiled
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(166,2): warning C4018: '<': signed/unsigned mismatch
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(164): message : while compiling class template member function 'T Linked_List<T>::get(int)'
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(164): message :         with
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(164): message :         [
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(164): message :             T=int
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(164): message :         ]
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(25): message : see reference to function template instantiation 'T Linked_List<T>::get(int)' being compiled
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(25): message :         with
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(25): message :         [
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(25): message :             T=int
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(25): message :         ]
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(199,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(188): message : while compiling class template member function 'unsigned int Linked_List<int>::push_back(T)'
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(188): message :         with
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(188): message :         [
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(188): message :             T=int
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\Linked_List.hpp(188): message :         ]
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(13): message : see reference to function template instantiation 'unsigned int Linked_List<int>::push_back(T)' being compiled
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(13): message :         with
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(13): message :         [
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(13): message :             T=int
+C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\CS_Project_5\driver.cpp(13): message :         ]
   CS_Project_5.vcxproj -> C:\Users\austi\OneDrive\Documents\GitHub\CS_Project_5\CS_Project_5\Debug\CS_Project_5.exe

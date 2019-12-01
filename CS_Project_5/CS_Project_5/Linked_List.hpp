@@ -13,8 +13,10 @@ private:
 	unsigned int length;
 	Node<T>* head;
 
-	void split(Node<T>*, Node<T>*, Node<T>*);
-	Node<T>* merge(Node<T>*, Node<T>*);
+	static void split(Node<T>*, Node<T>**, Node<T>**);
+	static Node<T>* merge(Node<T>*, Node<T>*, bool (*compare)(T, T));
+	static bool greator_equal(T, T);
+	static bool less_equal(T, T);
 
 public:
 
@@ -35,15 +37,17 @@ public:
 
 	unsigned int remove(int);
 
-	void sort_ascending(Node<T>* = head);
-	void sort_descending(Node<T>* = head);
+	void sort_ascending();
+	void sort_ascending(Node<T>**);
+	void sort_descending();
+	void sort_descending(Node<T>**);
 
 };
 
 #endif
 
 template<class T>
-inline void Linked_List<T>::split(Node<T>* start, Node<T>* list_0, Node<T>* list_1) {
+inline void Linked_List<T>::split(Node<T>* start, Node<T>** list_0, Node<T>** list_1) {
 
 	Node<T>* fast = start->next;
 	Node<T>* slow = start;
@@ -58,29 +62,43 @@ inline void Linked_List<T>::split(Node<T>* start, Node<T>* list_0, Node<T>* list
 
 	}
 
-	list_0 = start;
-	list_1 = slow->next;
+	*list_0 = start;
+	*list_1 = slow->next;
 	slow->next = nullptr;
 
 }
 
 template<class T>
-inline Node<T>* Linked_List<T>::merge(Node<T>* list_0, Node<T>* list_1) {
+inline Node<T>* Linked_List<T>::merge(Node<T>* list_0, Node<T>* list_1, bool (*compare)(T, T)) {
 
 	if(list_0 == nullptr) return list_1;
-	if(list_1 == nullptr) return list_2;
+	if(list_1 == nullptr) return list_0;
 
 	Node<T>* new_list;
 
-	if(list_0->val <= list_1->val) {
+	if((*compare)(list_0->val, list_1->val)) {
 		new_list = list_0;
-		new_list->next = merge(new_list->next, list_1);
+		new_list->next = merge(new_list->next, list_1, compare);
 	} else {
 		new_list = list_1;
-		new_list->next = merge(list_0, new_list->next);
+		new_list->next = merge(list_0, new_list->next, compare);
 	}
 
 	return new_list;
+
+}
+
+template<class T>
+inline bool Linked_List<T>::greator_equal(T val_0, T val_1) {
+
+	return val_0 >= val_1;
+
+}
+
+template<class T>
+inline bool Linked_List<T>::less_equal(T val_0, T val_1) {
+
+	return val_0 <= val_1;
 
 }
 
@@ -188,7 +206,7 @@ inline unsigned int Linked_List<T>::push_back(T val) {
 template<class T>
 inline unsigned int Linked_List<T>::insert(T val, int index) {
 
-	assert(index >= 0, index < length);
+	assert(index >= 0 && index < length);
 
 	if(index == 0) {
 		Node<T>* n = new Node<T>;
@@ -231,11 +249,65 @@ inline unsigned int Linked_List<T>::remove(int index) {
 }
 
 template<class T>
-inline void Linked_List<T>::sort_ascending(Node<T>* start) {
+inline void Linked_List<T>::sort_ascending() {
+	
+	if(head == nullptr || head->next == nullptr) return;
 
+	Node<T>* list_0 = nullptr, * list_1 = nullptr;
 
+	Linked_List::split(head, &list_0, &list_1);
+
+	sort_ascending(&list_0);
+	sort_ascending(&list_1);
+
+	head = Linked_List::merge(list_0, list_1, &Linked_List::less_equal);
 
 }
 
 template<class T>
-inline void Linked_List<T>::sort_descending(Node<T>* start) {}
+inline void Linked_List<T>::sort_ascending(Node<T>** start) {
+	   
+	if((*start) == nullptr || (*start)->next == nullptr) return;
+
+	Node<T>* list_0 = nullptr, * list_1 = nullptr;
+
+	Linked_List::split(*start, &list_0, &list_1);
+
+	sort_ascending(&list_0);
+	sort_ascending(&list_1);
+
+	*start = Linked_List::merge(list_0, list_1, &Linked_List::less_equal);
+
+}
+
+template<class T>
+inline void Linked_List<T>::sort_descending() {
+
+	if(head == nullptr || head->next == nullptr) return;
+
+	Node<T>* list_0 = nullptr, * list_1 = nullptr;
+
+	Linked_List::split(head, &list_0, &list_1);
+
+	sort_descending(&list_0);
+	sort_descending(&list_1);
+
+	head = Linked_List::merge(list_0, list_1, &Linked_List::greator_equal);
+
+}
+
+template<class T>
+inline void Linked_List<T>::sort_descending(Node<T>** start) {
+
+	if((*start) == nullptr || (*start)->next == nullptr) return;
+
+	Node<T>* list_0 = nullptr, * list_1 = nullptr;
+
+	Linked_List::split(*start, &list_0, &list_1);
+
+	sort_descending(&list_0);
+	sort_descending(&list_1);
+
+	*start = Linked_List::merge(list_0, list_1, &Linked_List::greator_equal);
+
+}
