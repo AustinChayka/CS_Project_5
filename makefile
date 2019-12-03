@@ -1,5 +1,5 @@
 CC := g++ -std=c++11
-EXE := proj4_app
+EXE := proj5_app
 
 SRCS := $(wildcard *.cpp)
 OBJS := $(patsubst %.cpp, %.o, $(SRCS))
