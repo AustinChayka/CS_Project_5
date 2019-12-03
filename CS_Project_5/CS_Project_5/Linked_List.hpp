@@ -44,8 +44,6 @@ public:
 
 };
 
-#endif
-
 template<class T>
 inline void Linked_List<T>::split(Node<T>* start, Node<T>** list_0, Node<T>** list_1) {
 
@@ -190,12 +188,14 @@ inline unsigned int Linked_List<T>::push_back(T val) {
 	if(head == nullptr) {
 		Node<T>* n = new Node<T>;
 		n->val = val;
+		n->next = nullptr;
 		head = n;
 		return ++length;
 	}
 
 	Node<T>* n = head, * new_n = new Node<T>();
 	new_n->val = val;
+	new_n->next = nullptr;
 	for(int i = 0; i < length - 1; i++) n = n->next;
 	n->next = new_n;
 
@@ -311,3 +311,5 @@ inline void Linked_List<T>::sort_descending(Node<T>** start) {
 	*start = Linked_List::merge(list_0, list_1, &Linked_List::greator_equal);
 
 }
+
+#endif
