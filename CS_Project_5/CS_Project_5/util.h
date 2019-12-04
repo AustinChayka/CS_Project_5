@@ -1,3 +1,9 @@
+/**
+**	Program: Utility Function Definitions
+**	Author: Austin Chayka
+**	Date: 12.3.2019
+**	Description: Definitions for utility functions
+**/
 #ifndef UTIL_H
 #define UTIL_H
 

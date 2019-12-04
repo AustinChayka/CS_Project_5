@@ -1,9 +1,20 @@
+/**
+**	Program: Program Driver
+**	Author: Austin Chayka
+**	Date: 12.3.2019
+**	Description: Driver file for the program
+**/
 #include <iostream>
 #include "Linked_List.hpp"
 #include "util.h"
 
 using namespace std;
 
+/**
+**	Function: main
+**	Description: driver function
+**	Parameters: none requird
+**/
 int main(int argc, char argv[]) {
 
 	bool running = true;

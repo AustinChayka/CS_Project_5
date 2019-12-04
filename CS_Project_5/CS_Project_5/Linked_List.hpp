@@ -1,3 +1,9 @@
+/**
+**	Program: Linked List Template
+**	Author: Austin Chayka
+**	Date: 12.3.2019
+**	Description: Template class for a linked list
+**/
 #ifndef LINKED_LIST_HPP
 #define LINKED_LIST_HPP
 
@@ -21,6 +27,9 @@ private:
 public:
 
 	Linked_List();
+	Linked_List(const Linked_List<T>&);
+
+	Linked_List<T>& operator=(const Linked_List<T>&);
 
 	~Linked_List();
 
@@ -38,12 +47,17 @@ public:
 	unsigned int remove(int);
 
 	void sort_ascending();
-	void sort_ascending(Node<T>**);
+	static void sort_ascending(Node<T>**);
 	void sort_descending();
-	void sort_descending(Node<T>**);
+	static void sort_descending(Node<T>**);
 
 };
 
+/**
+**	Function: split
+**	Description: splits list and saves two new heads
+**	Parameters: list to split, first head varieble, second head variable
+**/
 template<class T>
 inline void Linked_List<T>::split(Node<T>* start, Node<T>** list_0, Node<T>** list_1) {
 
@@ -66,6 +80,12 @@ inline void Linked_List<T>::split(Node<T>* start, Node<T>** list_0, Node<T>** li
 
 }
 
+/**
+**	Function: merge
+**	Description: merges two sorted lists together in order, determined
+**		by the comparison function
+**	Parameters: first list head, secod list head, comparison function
+**/
 template<class T>
 inline Node<T>* Linked_List<T>::merge(Node<T>* list_0, Node<T>* list_1, bool (*compare)(T, T)) {
 
@@ -86,6 +106,12 @@ inline Node<T>* Linked_List<T>::merge(Node<T>* list_0, Node<T>* list_1, bool (*c
 
 }
 
+/**
+**	Function: greator or equal comparison
+**	Description: returns if value 0 is greator or equal to
+**		value 1 or not
+**	Parameters: value 0, value 1
+**/
 template<class T>
 inline bool Linked_List<T>::greator_equal(T val_0, T val_1) {
 
@@ -93,6 +119,12 @@ inline bool Linked_List<T>::greator_equal(T val_0, T val_1) {
 
 }
 
+/**
+**	Function: less or equal comparison
+**	Description: returns if value 0 is less or equal to
+**		value 1 or not
+**	Parameters: value 0, value 1
+**/
 template<class T>
 inline bool Linked_List<T>::less_equal(T val_0, T val_1) {
 
@@ -100,6 +132,11 @@ inline bool Linked_List<T>::less_equal(T val_0, T val_1) {
 
 }
 
+/**
+**	Function: constructor
+**	Description: sets variable values
+**	Parameters: none
+**/
 template<class T>
 inline Linked_List<T>::Linked_List() {
 
@@ -108,6 +145,46 @@ inline Linked_List<T>::Linked_List() {
 
 }
 
+/**
+**	Function: copy constructor
+**	Description: sets variable values to those of another list
+**	Parameters: list to copy from
+**/
+template<class T>
+inline Linked_List<T>::Linked_List(const Linked_List<T>& copy_list) {
+
+	Node<T>* copy_node = copy_list.head;
+	while(copy_node != nullptr) {
+		push_back(new Node(copy_node.val));
+		copy_node = copy_node.next;
+	}
+
+}
+
+/**
+**	Function: assignment operator overload
+**	Description: sets variable values to those of another list
+**	Parameters: list to copy from
+**/
+template<class T>
+inline Linked_List<T>& Linked_List<T>::operator=(const Linked_List<T>& copy_list) {
+
+	if(length > 0) clear();
+	Node<T>* copy_node = copy_list.head;
+	while(copy_node != nullptr) {
+		push_back(new Node(copy_node.val));
+		copy_node = copy_node.next;
+	}
+
+	return *this;
+
+}
+
+/**
+**	Function: destructor
+**	Description: deallocates dynamic memory
+**	Parameters: none
+**/
 template<class T>
 inline Linked_List<T>::~Linked_List() {
 
@@ -115,6 +192,11 @@ inline Linked_List<T>::~Linked_List() {
 
 }
 
+/**
+**	Function: constructor
+**	Description: sets variable values
+**	Parameters: none
+**/
 template<class T>
 inline void Linked_List<T>::print() {
 
@@ -132,6 +214,11 @@ inline void Linked_List<T>::print() {
 
 }
 
+/**
+**	Function: clear
+**	Description: clears the list and deallocates nodes
+**	Parameters: none
+**/
 template<class T>
 inline void Linked_List<T>::clear() {
 
@@ -151,6 +238,11 @@ inline void Linked_List<T>::clear() {
 
 }
 
+/**
+**	Function: get length
+**	Description: gets the list length
+**	Parameters: none
+**/
 template<class T>
 inline unsigned int Linked_List<T>::get_length() {
 
@@ -158,6 +250,11 @@ inline unsigned int Linked_List<T>::get_length() {
 
 }
 
+/**
+**	Function: get
+**	Description: gets value at the specified index
+**	Parameters: index
+**/
 template<class T>
 inline T Linked_List<T>::get(int index) {
 
@@ -170,6 +267,11 @@ inline T Linked_List<T>::get(int index) {
 
 }
 
+/**
+**	Function: push front
+**	Description: adds a value to the front of the list
+**	Parameters: value to add
+**/
 template<class T>
 inline unsigned int Linked_List<T>::push_front(T val) {
 
@@ -182,6 +284,11 @@ inline unsigned int Linked_List<T>::push_front(T val) {
 
 }
 
+/**
+**	Function: push back
+**	Description: adds a value to the back of the list
+**	Parameters: value to add
+**/
 template<class T>
 inline unsigned int Linked_List<T>::push_back(T val) {
 
@@ -203,6 +310,11 @@ inline unsigned int Linked_List<T>::push_back(T val) {
 
 }
 
+/**
+**	Function: insert
+**	Description: adds a value to the list at the specified index
+**	Parameters: value to add, index
+**/
 template<class T>
 inline unsigned int Linked_List<T>::insert(T val, int index) {
 
@@ -226,6 +338,11 @@ inline unsigned int Linked_List<T>::insert(T val, int index) {
 
 }
 
+/**
+**	Function: remove
+**	Description: removes value at the specified index
+**	Parameters: index
+**/
 template<class T>
 inline unsigned int Linked_List<T>::remove(int index) {
 
@@ -248,6 +365,11 @@ inline unsigned int Linked_List<T>::remove(int index) {
 
 }
 
+/**
+**	Function: sort ascending
+**	Description: sorts the list in ascending order using recursive merge sort
+**	Parameters: none
+**/
 template<class T>
 inline void Linked_List<T>::sort_ascending() {
 	
@@ -257,13 +379,18 @@ inline void Linked_List<T>::sort_ascending() {
 
 	Linked_List::split(head, &list_0, &list_1);
 
-	sort_ascending(&list_0);
-	sort_ascending(&list_1);
+	Linked_List::sort_ascending(&list_0);
+	Linked_List::sort_ascending(&list_1);
 
 	head = Linked_List::merge(list_0, list_1, &Linked_List::less_equal);
 
 }
 
+/**
+**	Function: sort ascending
+**	Description: sorts the list in ascending order using recursive merge sort
+**	Parameters: head node of the list
+**/
 template<class T>
 inline void Linked_List<T>::sort_ascending(Node<T>** start) {
 	   
@@ -273,13 +400,18 @@ inline void Linked_List<T>::sort_ascending(Node<T>** start) {
 
 	Linked_List::split(*start, &list_0, &list_1);
 
-	sort_ascending(&list_0);
-	sort_ascending(&list_1);
+	Linked_List::sort_ascending(&list_0);
+	Linked_List::sort_ascending(&list_1);
 
 	*start = Linked_List::merge(list_0, list_1, &Linked_List::less_equal);
 
 }
 
+/**
+**	Function: sort descending
+**	Description: sorts the list in descending order using recursive merge sort
+**	Parameters: none
+**/
 template<class T>
 inline void Linked_List<T>::sort_descending() {
 
@@ -289,13 +421,18 @@ inline void Linked_List<T>::sort_descending() {
 
 	Linked_List::split(head, &list_0, &list_1);
 
-	sort_descending(&list_0);
-	sort_descending(&list_1);
+	Linked_List::sort_descending(&list_0);
+	Linked_List::sort_descending(&list_1);
 
 	head = Linked_List::merge(list_0, list_1, &Linked_List::greator_equal);
 
 }
 
+/**
+**	Function: sort descending
+**	Description: sorts the list in descending order using recursive merge sort
+**	Parameters: head node of the list
+**/
 template<class T>
 inline void Linked_List<T>::sort_descending(Node<T>** start) {
 
@@ -305,8 +442,8 @@ inline void Linked_List<T>::sort_descending(Node<T>** start) {
 
 	Linked_List::split(*start, &list_0, &list_1);
 
-	sort_descending(&list_0);
-	sort_descending(&list_1);
+	Linked_List::sort_descending(&list_0);
+	Linked_List::sort_descending(&list_1);
 
 	*start = Linked_List::merge(list_0, list_1, &Linked_List::greator_equal);
 

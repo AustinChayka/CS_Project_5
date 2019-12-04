@@ -1,6 +1,11 @@
 #include "util.h"
 #include <iostream>
 
+/**
+**	Function: is prime
+**	Description: check if a number is a prime
+**	Parameters: number
+**/
 bool is_prime(int n) {
 
 	if(n < 0) return false;
@@ -11,6 +16,11 @@ bool is_prime(int n) {
 
 }
 
+/**
+**	Function: is number
+**	Description: checks if string is a number
+**	Parameters: string
+**/
 bool is_num(std::string s) {
 
 	for(int i = (s[0] == '-' ? 1 : 0); s[i] != '\0'; i++) if(s[i] < '0' || s[i] > '9') return false;
@@ -19,6 +29,11 @@ bool is_num(std::string s) {
 
 }
 
+/**
+**	Function: get mode
+**	Description: gets program mode from the user
+**	Parameters: none
+**/
 int get_mode() {
 
 	std::string input;
@@ -40,6 +55,11 @@ int get_mode() {
 
 }
 
+/**
+**	Function: get integer input
+**	Description: gets an integer from the user
+**	Parameters: none
+**/
 int get_int_input() {
 
 	std::string input;
@@ -56,6 +76,11 @@ int get_int_input() {
 
 }
 
+/**
+**	Function: get unsigned integer input
+**	Description: gets an unsigned integer from the user
+**	Parameters: none
+**/
 unsigned int get_uint_input() {
 
 	std::string input;
@@ -75,6 +100,11 @@ unsigned int get_uint_input() {
 
 }
 
+/**
+**	Function: count primes
+**	Description: counts the number of primes in a list of integers
+**	Parameters: list of integers
+**/
 int count_primes(Linked_List<int>& list) {
 
 	int primes = 0;
@@ -84,6 +114,11 @@ int count_primes(Linked_List<int>& list) {
 
 }
 
+/**
+**	Function: count primes
+**	Description: counts the number of primes in a list of unsigned integers
+**	Parameters: list of unsigned integers
+**/
 int count_primes(Linked_List<unsigned int>& list) {
 
 	int primes = 0;
@@ -93,6 +128,12 @@ int count_primes(Linked_List<unsigned int>& list) {
 
 }
 
+/**
+**	Function: handle integer input
+**	Description: fills a list with user defined integers, sorts it, 
+**		and counts the number of primes
+**	Parameters: list of integers
+**/
 void handle_int_input(Linked_List<int>& list) {
 
 	std::string input;
@@ -129,6 +170,12 @@ void handle_int_input(Linked_List<int>& list) {
 
 }
 
+/**
+**	Function: handle unsigned integer input
+**	Description: fills a list with user defined unsigned integers, sorts it,
+**		and counts the number of primes
+**	Parameters: list of unsigned integers
+**/
 void handle_uint_input(Linked_List<unsigned int>& list) {
 
 	std::string input;
@@ -165,6 +212,11 @@ void handle_uint_input(Linked_List<unsigned int>& list) {
 
 }
 
+/**
+**	Function: handle restart check
+**	Description: checks if the user wants to run the program again
+**	Parameters: program running bool
+**/
 void handle_restart_check(bool& running) {
 
 	std::string input;
