@@ -15,7 +15,7 @@ using namespace std;
 **	Description: driver function
 **	Parameters: none requird
 **/
-int main(int argc, char argv[]) {
+int main(int argc, char* argv[]) {
 
 	bool running = true;
 	while(running) {

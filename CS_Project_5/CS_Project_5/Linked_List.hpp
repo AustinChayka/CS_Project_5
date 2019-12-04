@@ -155,7 +155,7 @@ inline Linked_List<T>::Linked_List(const Linked_List<T>& copy_list) {
 
 	Node<T>* copy_node = copy_list.head;
 	while(copy_node != nullptr) {
-		push_back(new Node(copy_node.val));
+		push_back(new Node<T>(copy_node.val));
 		copy_node = copy_node.next;
 	}
 
@@ -172,7 +172,7 @@ inline Linked_List<T>& Linked_List<T>::operator=(const Linked_List<T>& copy_list
 	if(length > 0) clear();
 	Node<T>* copy_node = copy_list.head;
 	while(copy_node != nullptr) {
-		push_back(new Node(copy_node.val));
+		push_back(new Node<T>(copy_node.val));
 		copy_node = copy_node.next;
 	}
 
